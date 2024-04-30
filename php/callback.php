@@ -7,7 +7,13 @@ function teste($name)
 
 function teste2($callback)
 {
-    return $callback("Marcos");
+    if (is_callable($callback)) {
+        return $callback("Marcos");
+    }
+    else {
+        return "Não é um callback";
+    }
 }
 
+$user = "teste";
 echo teste2("teste");
